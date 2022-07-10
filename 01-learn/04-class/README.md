@@ -77,20 +77,20 @@ let  kateCust=new Customer()   kateCust 是对象变量名 ，new Customer()  �
 
 ``` javascript
 	var Person = /** @class */ (function () {
-    function Person(name_, age_, phone_) {
-        this.name = "noname"; //赋初值为noname
-        this.age = 0;
-        this.phone = "11111";
-        this.name = name_;
-        this.age = age_;
-        this.phone = phone_;
-    }
-    Person.prototype.doEat = function (who, address) {
-        console.log(this.name + "\u548C" + who + "\u5403\u996D,\u5728" + address + "\u5403\u996D");
-    };
-    Person.prototype.doStep = function () {
-    };
-    return Person;
+        function Person(name_, age_, phone_) {
+            this.name = "noname"; //赋初值为noname
+            this.age = 0;
+            this.phone = "11111";
+            this.name = name_;
+            this.age = age_;
+            this.phone = phone_;
+        }
+        Person.prototype.doEat = function (who, address) {
+            console.log(this.name + "\u548C" + who + "\u5403\u996D,\u5728" + address + "\u5403\u996D");
+        };
+        Person.prototype.doStep = function () {
+        };
+        return Person;
   }());
   
     var zhangSanPerson = new Person("zhangSan", 23, "134123123");
@@ -134,9 +134,9 @@ let  kateCust=new Customer()   kateCust 是对象变量名 ，new Customer()  �
 
 顾客在淘宝上下一次订单购买了三件商品，用三条记录来表示：
 
-第一个订单详情记录： 1   "笔记本" 6898  8
-第二个订单详情记录：  2    "电脑桌" 7878  9
-第三个订单详情记录：  3    "手机"   3789  2
+第一个订单详情记录： 1   "笔记本" 6898   8
+第二个订单详情记录： 2   "电脑桌" 7878   9
+第三个订单详情记录： 3   "手机"   3789  2
 每一个订单详情都可以用一个对象来表示 【订单详情对象】
 
 创建一个订单详情类【OrderDetail】 然后 new 出 3 个订单详情类的实例 【当然也可以 new 出 n 个】
