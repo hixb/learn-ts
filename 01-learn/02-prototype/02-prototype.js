@@ -13,21 +13,28 @@ QQUser.prototype.show = function () {
 let qqZhangSan = new QQUser(345345, 15, "嘁嘁嘁");
 let qqLiSi = new QQUser("466535", 22, "将进酒");
 
-QQUser.prototype.commonFriends.push("大🌲");
+// QQUser.prototype.commonFriends.push("大🌲");
 
 console.log("qqZhangSan.commonFriends: ", qqZhangSan.commonFriends);
 console.log("qqLiSi.commonFriends: ", qqLiSi);
 
-let obj = { username: "WangWu", age: 23 };
-let objNew = obj;
+QQUser.prototype = {
+  commonFriends: ["abc", "ecd"]
+};
+
+console.log("qqZhangSan.commonFriends: ", qqZhangSan.commonFriends);
+console.log("QQUser.prototype.commonFriends: ", QQUser.prototype.commonFriends);
+
+// let obj = { username: "WangWu", age: 23 };
+// let objNew = obj;
 // 改变
 // obj.username = "XiaoLi";
 // 增加
 // obj.phone = "12353454645";
 // 覆盖
-obj = { address: "北京市东城区" };
-console.log(obj);
-console.log(objNew);
+// obj = { address: "北京市东城区" };
+// console.log(obj);
+// console.log(objNew);
 
 /**
  * 如何访问原型对象空间上的属性和方法
