@@ -88,3 +88,17 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# node_modules and yarn.lock and dist
+**/node_modules
+**/dist
+*node_modules/*
+*dist/*
+
+*yarn.lock/*
+!*yarn/*.lock
+
+*/*yarn.lock/*
+!*/*yarn/*.lock
+
+*.lock
