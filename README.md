@@ -5,11 +5,11 @@
 #### Parcel 打包支持浏览器运行 ts 文件
 (见 `/01-learn/03-autoReboot`)
 
-1. 安装 Parcel 打包工具: yarn add parcel-bundler -d
+1. 安装 Parcel 打包工具: yarn add parcel-bundler --dev
 2. 在 package.json 中给 npm 添加启动项, 支持启动 parcel 工具包
    ```shell
       "scripts": {
-          "start": "parcel ./index.html"
+          "dev": "parcel ./index.html"
       }
    ```
 3. 启动 parcel 工具包
