@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "parcel ./index.html",
+    "watch": "nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

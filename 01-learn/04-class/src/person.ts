@@ -7,6 +7,9 @@ class Person {
   public name: string = "noname";
   public age: number = 0;
   public phone: number = 121212122;
+  // public addressArr: string[] = ["山东省菏泽市", "北京市西城区"];
+  // public resolve: () => void = () => {} // 函数类型的属性[属于引用属性的一种]
+  // public addressArr: Array<string> = ["山东省菏泽市", "北京市西城区"]; // 数组类型的属性[属于引用属性的一种]
   // 对象的变量 = 实例的变量 = 类的[非静态的]属性 === 简称属性
   // 实例属或者对象属性
 
@@ -29,7 +32,7 @@ class Person {
 
 // let zhangSanPerson = new Person("");
 // 给对象赋值的两种方式
-// 1. 通过类中属性或者方法来赋值
+// 1. 通过类中属性或者方法来赋值 get/set选择器来赋值
 // zhangSanPerson.name = "zhuxb";
 // zhangSanPerson.age = 18;
 // zhangSanPerson.phone = 1323435654;
