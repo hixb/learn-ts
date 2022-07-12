@@ -30,19 +30,20 @@ let message: Message[] = [
 ]
 
 function getMessage(id: number): Message; // 重载签名, 可以有多个
-function getMessage(msgType: MessageType): Message[]; // 重载签名
+function getMessage(msgType: MessageType, readRecordCount?: number): Message[]; // 重载签名
 
 // 实现签名函数, 只有实现签名才有函数体, 实现签名只能有一个
-function getMessage(payload: unknown): Message[] | Message | undefined {
+function getMessage(payload: unknown, readRecordCount?: number): Message[] | Message | undefined {
   return typeof payload === "number"
     ? message.find(item => payload === item.id)
-    : message.filter(item => payload === item.type);
+    : readRecordCount
+      ? message.filter(item => payload === item.type).splice(0, readRecordCount)
+      : message.filter(item => payload === item.type);
 }
 
-const msg = getMessage("image");
-// msg.forEach(item => {
-//   console.log("msg", item.sendMessage);
-// })
-console.log(msg);
+getMessage(1);
+getMessage("image", 2).forEach(item => {
+  console.log("msg", item);
+})
 
 export {}
