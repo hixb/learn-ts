@@ -33,7 +33,7 @@ function getMessage(id: number): Message; // 重载签名, 可以有多个
 function getMessage(msgType: MessageType, readRecordCount?: number): Message[]; // 重载签名
 
 // 实现签名函数, 只有实现签名才有函数体, 实现签名只能有一个
-function getMessage(payload: unknown, readRecordCount?: number): Message[] | Message | undefined {
+function getMessage(payload: any, readRecordCount?: number): Message[] | Message | undefined {
   return typeof payload === "number"
     ? message.find(item => payload === item.id)
     : readRecordCount
