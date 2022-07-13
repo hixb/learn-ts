@@ -18,16 +18,27 @@ class ArrayList {
       console.log(el)
     })
   }
+
+  remove(value: number): number;
+  remove(value: object): object;
+  remove(value: any): any {
+    this.element = this.element.filter((item, index) =>
+      typeof value === "number"
+        ? value !== index
+        : value !== item
+    )
+    return value
+  }
 }
 
 let stuOne = {stuName: "ZhangSan", age: 13};
 let stuTow = {stuName: "LiSi", age: 22};
 let stuThree = {stuName: "WangErMa", age: 28};
 
-let arr = new ArrayList([stuOne, stuTow, stuThree]);
+let arrList = new ArrayList([stuOne, stuTow, stuThree]);
+arrList.show();
 
-arr.show();
-
-// 如果根据数字去删除元素, remove方法返回的是一个数字
+// 如果根据索引去删除元素, remove方法返回的是一个索引
 // 如果根据对象去删除元素, remove方法返回的是一个对象
-// const result = arr.remove(1);
+const result = arrList.remove(stuTow);
+console.log(result);
