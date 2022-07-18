@@ -28,6 +28,9 @@ export default class MyLocalStorage {
     return this.total;
   }
 
+  public test() {
+  }
+
   public setItem(key: string, value: any) {
     localStorage.setItem(key, JSON.stringify(value));
   }
@@ -36,6 +39,14 @@ export default class MyLocalStorage {
     const getLoginUser = localStorage.getItem(key);
     return getLoginUser ? JSON.parse(getLoginUser) : null;
   }
+}
+
+// 不允许增加
+// MyLocalStorage.prototype.test1 = function () {
+// }
+
+// 允许覆盖
+MyLocalStorage.prototype.test = function () {
 }
 
 /**
