@@ -1,6 +1,11 @@
 export default class MyLocalStorage {
   // 静态属性和对象属性是类中的两大成员
-  static localStorage: MyLocalStorage;
+  // static localStorage: MyLocalStorage;
+
+  // 对象属性[对象的基本类型属性和对象的引用属性]
+  // 静态属性[静态的基本类型属性和静态的引用熟悉]
+  static localStorage: MyLocalStorage = new MyLocalStorage;
+  private static total: number = 0;
 
   private constructor() {
     console.log("这是ts的单件设计模式的静态方法的构造器");
@@ -19,6 +24,17 @@ export default class MyLocalStorage {
     return this.localStorage;
   }
 
+  public static addTotal() {
+    this.total += 3;
+  }
+
+  public static getTotal() {
+    return this.total;
+  }
+
+  public test() {
+  }
+
   public setItem(key: string, value: any) {
     localStorage.setItem(key, JSON.stringify(value));
   }
@@ -29,8 +45,18 @@ export default class MyLocalStorage {
   }
 }
 
+// 不允许增加
+// MyLocalStorage.prototype.test1 = function () {
+// }
+
+// 允许覆盖
+MyLocalStorage.prototype.test = function () {
+}
+
+// MyLocalStorage.getInstance();
+
 /**
- * 构建单件设计模式
+ * 构建单件设计模式[懒汉式[等到需要使用对象时才创建对象, 按需创建]单件设计模式]
  *  1. 把构造器设置为私有的, 不允许外部赖创建类的实例[对象]
  *  2. 至少应该提供一个外部访问的方法获属性, 外部可以通过这个方法或属性来得到一个对象, 所以应该把这个方法设置为静态方法
  *  3. 外部调用第二步提供的静态方法来获取一个对象
