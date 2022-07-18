@@ -1,6 +1,7 @@
 export default class MyLocalStorage {
   // 静态属性和对象属性是类中的两大成员
   static localStorage: MyLocalStorage;
+  private static total: number = 0;
 
   private constructor() {
     console.log("这是ts的单件设计模式的静态方法的构造器");
@@ -17,6 +18,14 @@ export default class MyLocalStorage {
       this.localStorage = new MyLocalStorage();
     }
     return this.localStorage;
+  }
+
+  public static addTotal() {
+    this.total += 3;
+  }
+
+  public static getTotal() {
+    return this.total;
   }
 
   public setItem(key: string, value: any) {
