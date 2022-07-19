@@ -21,3 +21,8 @@ let myObj = {
 console.log("myObj1: ", myObj);
 peopleObj.eat.call(myObj, "北京市", 18);
 console.log("myObj2: ", myObj);
+
+// apply 传递的数组
+peopleObj.eat.apply(myObj, ["北京市", 18]);
+console.log("myObj2: ", myObj);
+
