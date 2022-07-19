@@ -25,6 +25,9 @@ console.log("Son.prototype", Son.prototype);
 //    子类对象变量可以访问父类的实例属性
 //    子类对象变量可以访问父类原型对象空间中的属性和方法
 Son.prototype = new Parent("往往", 44);
+// 让Son类的对象或函数原型.prototype指向的原型对象空间[new Parent()对象空间, 有一个constructor属性]
+// 指向了Son构造函数对象空间
+Son.prototype.constructor = Son;
 console.log("Son.prototype 原型链继承之后的指向", Son.prototype);
 
 const sonObj2 = new Son("打篮球", "男");
