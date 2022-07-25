@@ -8,27 +8,27 @@
 1. 安装 Parcel 打包工具: yarn add parcel-bundler --dev
 2. 在 package.json 中给 npm 添加启动项, 支持启动 parcel 工具包
    ```shell
-      "scripts": {
-          "dev": "parcel ./index.html"
-      }
+   "scripts": {
+       "dev": "parcel ./index.html"
+   }
    ```
 3. 启动 parcel 工具包
    ```shell
-      yarn dev
+   yarn dev
    ```
 
 #### 安装 typescript
 1. ```shell
-      全局安装:
-        npm install typescript -g
-      本地安装:
-        npm install typescript -D
-      yarn安装:
-        yarn global add typescript
+   全局安装:
+     npm install typescript -g
+   本地安装:
+     npm install typescript -D
+   yarn安装:
+     yarn global add typescript
    ```
 2. 生成 tsconfig.ts 中的配置
    ```shell
-      tsc --init
+   tsc --init
    ```
 3. 修改 tsconfig.ts 中的配置
 
@@ -51,10 +51,10 @@
    **ts-node 则包装了node; 它可以直接的运行 ts 代码**
 
    ```shell
-      全局安装:
-        yarn global add ts-node
-      本地安装:
-        yarn add ts-node --dev
+   全局安装:
+     yarn global add ts-node
+   本地安装:
+     yarn add ts-node --dev
    ```
    
 7. 安装 nodemon 工具
@@ -62,17 +62,17 @@
    nodemon 作用: **nodemoon 可以自动检测到目录中的文件更改时通过重新启动用用程序开调试基于 node.js 的应用程序**
 
    ```shell
-      全局安装:
-        yarn global add nodemon
-      本地安装:
-        yarn add nodemon --dev
+   全局安装:
+     yarn global add nodemon
+   本地安装:
+     yarn add nodemon --dev
    ```
    
 8. 在 package.js 中配置自动检测, 自动重启应用程序
    ```shell
-      "scripts:" {
-          "watch": "nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
-      }
+   "scripts:" {
+       "watch": "nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
+   }
    ```
    `nodemou --watch src/` 表示检测的目录是 package.json 同级目录 src
    
